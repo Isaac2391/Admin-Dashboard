@@ -1,0 +1,192 @@
+/* Presets */ 
+
+/* 1. Use a more-intuitive box-sizing model */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+
+/* 3. Enable keyword animations */
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+  display: inline-grid; 
+  font-family: 'Roboto';
+  background-color: gainsboro;
+  overflow-y: hidden;
+}
+
+/* 6. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 7. Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 8. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+  z-index: 5;
+}
+
+/* 9. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+
+/*
+  10. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+.Left-Sidebar {
+  display: grid; row-gap: 7vh; position: sticky;
+  grid-template-rows: repeat(10,1rem); 
+  background-color: deepskyblue; color: white;
+  height: 100vh; width: 20vw; 
+   z-index: 1;
+   box-shadow: 0.2rem 0 0.2rem -0.1rem gray;
+
+
+}
+
+.Left-Sidebar.Items { 
+  display: flex; align-items: left; justify-content: space-between; position: relative; gap: 1vw;
+  margin-left: 0.5vw; height: 1.5vh; width: 5vw;
+}
+
+img { 
+  width: 5vw; height: 5vh;
+}
+
+#Header-ID {
+box-shadow: 1rem 1rem 1rem 1rem gainsboro;
+}
+
+.Header {
+ height: 10vh; width: 100vw; 
+ position: absolute; right: 0;
+ z-index: 0;
+ background-color: white; 
+ z-index: 1;
+}
+
+.Header.Top { 
+  position: relative; 
+  display: flex; align-items: center; justify-content: space-between; 
+  z-index: 1;
+}
+
+.Header.Searchbar {
+  border-radius: 30%; height: 5vh; width: 40vw; border: transparent; position: relative; 
+  margin-left: 39vw; margin-right: 1vw;
+  z-index: 1;
+}
+
+.Header.Top.Right { 
+  position: relative; margin-left: 25vw; margin-right: 2vw; 
+}
+
+.Header.Lower {
+  display: flex; flex: auto; justify-content: center; align-content: left; gap: 1vw;
+  box-shadow: 0.2rem 0.2rem 0.2rem gray;
+}
+
+.HL-Buttons { 
+  background-color: deepskyblue; color: white; 
+  height: 5vh; width: 5vw; border-radius: 35%; z-index: 2; 
+  border: transparent; box-shadow: 0.4rem 0.2rem 0.2rem gainsboro;
+
+}
+
+#Buttons-Wrapper { 
+z-index: 2; margin-left: 80vw;
+}
+
+.Header.Lower.Welcome { 
+  display: flex; justify-content: center; align-content: center;
+}
+
+.Content { 
+  display: grid; 
+  margin-left: 7vw; margin-top: -24vh; max-height: 100%; max-width: 100%; 
+  position: relative; 
+}
+
+.Content >p { 
+ color: gray; 
+}
+
+.Content.Projects {
+  display: grid; gap: 1rem;
+  grid-template-rows: 8rem 8rem 8rem; grid-template-columns: 25rem 25rem;
+  column-gap: 0rem;
+}
+
+#Projects-Title { 
+  position: relative;
+  margin-top: -55vh;
+  margin-left: 14vw;
+}
+
+.Content.Projects.Children { 
+  position: relative;
+  background-color: whitesmoke; border-left: 8px solid #f0db4f; box-shadow: 0.4rem 0.2rem 0.2rem gray;
+  width: 70%; height: 100%; padding: 1rem;
+  display: flex; flex-direction: column; justify-content: center;
+  overflow:hidden; border-radius: 5%;
+}
+
+.Content.Announcements {
+display: flex; flex-direction: column; justify-content: center; flex: auto; gap: 0.5rem; 
+margin-left: 62vw; margin-top: -85vh; width: 20vw; height: 14vh; border-radius: 5%; z-index: 5;
+background-color: gainsboro;  
+}
+
+.Announcements-Children>p{ 
+ font-size: 5%;  
+}
+
+.Content.Trending { 
+display: flex; flex-direction: column; justify-content: center; 
+margin-left: 16vw; width: 10vw; height: 9vh; margin-top: -60vh;
+ background-color: gainsboro; z-index: 5;
+}
+
+#Trending-Title { 
+  margin-left: 15vw; width: 7vw; margin-top: -27vh; position: absolute;
+}
+
+.Content.Trending {
+  margin-top: -55vh; position: relative; width: 16vw;
+}
+
+.Content.Trending.Children {
+  display: flex; flex-direction: row; justify-content: center;
+  margin-top: 10vh; width: 100%; background-color: gainsboro;
+}
+.Content.Trending.Children>p { 
+  font-size: 0.5rem; 
+}
